@@ -14,6 +14,10 @@ import javax.swing.JFrame; //tablas
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ImageIcon;
+import java.awt.Image;
+
+
 
 
 
@@ -35,8 +39,11 @@ public class Requerimiento1GUI extends JFrame  {
 
     public Requerimiento1GUI(ArrayList<Requerimiento_1> requerimiento_1s, ElControladorDeRequerimientos controlador){
         //TITULO
-        super.setTitle("Requerimiento 1 !!"); //titulo de la tabla
+        super.setTitle("Requerimiento 1 !!"); //titulo de la tabla        
         setDefaultCloseOperation(DISPOSE_ON_CLOSE); //CUANDO LE DEN CLICK EN EL BOTON X SE CIERRA
+        Image icon = new ImageIcon(getClass().getResource("/img/compania.png")).getImage();
+        setIconImage(icon);
+
         String[] encabezados = {"Ciudad", "Acabados", "Clasificacion", "Banco_VInculado","Constructora"};
         jtTablaRequerimiento1 = new JTable(
                                      this.formatoquerimiento1(requerimiento_1s, encabezados.length),
